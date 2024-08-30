@@ -1,4 +1,3 @@
-
 echo n > script.txt
 echo p >> script.txt
 echo 1 >> script.txt
@@ -23,17 +22,17 @@ mkfs.fat -F 32 /dev/sda1
 mkswap /dev/sda2
 echo Mounting.
 mount /dev/sda3 /mnt
-mount --mkdir /dev/sda1 /mnt/boot
+mount --mkdir /dev/sda1 /mnt/boot   
 swapon /dev/sda2
 echo Installing Software.
 pacstrap -K /mnt base linux
 echo Generating FSTAB and Rooting
 genfstab -U /mnt >> /mnt/etc/fstab
 echo Installing git.
-echo pacman -S plasma-meta > script.sh
+echo pacman -Sy --noconfirm plasma-meta > script.sh
 echo y >> script.sh
 cat script.sh | arch-chroot /mnt
-echo pacman -Sy grub linux efibootmgr plasma-meta> script.sh
+echo pacman -Sy --noconfirm grub linux efibootmgr plasma-meta> script.sh
 echo y >> script.sh
 cat script.sh | arch-chroot /mnt
 echo grub-install /dev/sda --efi-directory=/boot > script.sh # install grub 
