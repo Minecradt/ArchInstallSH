@@ -29,14 +29,18 @@ pacstrap -K /mnt base linux
 echo Generating FSTAB and Rooting
 genfstab -U /mnt >> /mnt/etc/fstab
 echo Installing git.
-echo pacman -Sy --noconfirm plasma-meta > script.sh
+echo pacman -S --noconfirm plasma-meta > script.sh
 echo y >> script.sh
 cat script.sh | arch-chroot /mnt
-echo pacman -Sy --noconfirm grub linux efibootmgr plasma-meta> script.sh
+echo pacman -S --noconfirm grub efibootmgr> script.sh
 echo y >> script.sh
 cat script.sh | arch-chroot /mnt
 echo grub-install /dev/sda --efi-directory=/boot > script.sh # install grub 
 echo 'sed -i '\''s/#GRUB_DISABLE_OS_PROBER=false/GRUB_DISABLE_OS_PROBER=false/g'\'' /etc/default/grub' >> script.sh
 echo grub-mkconfig -o /boot/grub/grub.cfg >> script.sh
 cat script.sh | arch-chroot /mnt
+echo Creating user.
+echo useradd -m -G wheel -s /bin/bash arch > script.sh
+echo "echo 'arch:arch' | sudo chpassword" >> script.sh
 echo Finished!
+reboot
