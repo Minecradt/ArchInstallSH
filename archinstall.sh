@@ -42,5 +42,6 @@ cat script.sh | arch-chroot /mnt
 echo Creating user.
 echo useradd -m -G wheel -s /bin/bash arch > script.sh
 echo "echo 'arch:arch' | sudo chpassword" >> script.sh
+cat script.sh | arch-chroot /mnt
 echo Finished!
 reboot
