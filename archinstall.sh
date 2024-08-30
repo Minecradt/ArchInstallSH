@@ -34,10 +34,9 @@ echo y >> script.sh
 cat script.sh | arch-chroot /mnt
 echo pacman -Sy grub linux efibootmgr plasma-meta> script.sh
 echo y >> script.sh
-echo grub-install /dev/sda --efi-directory=/boot >> script.sh # install grub 
+cat script.sh | arch-chroot /mnt
+echo grub-install /dev/sda --efi-directory=/boot > script.sh # install grub 
 echo 'sed -i '\''s/#GRUB_DISABLE_OS_PROBER=false/GRUB_DISABLE_OS_PROBER=false/g'\'' /etc/default/grub' >> script.sh
 echo grub-mkconfig -o /boot/grub/grub.cfg >> script.sh
 cat script.sh | arch-chroot /mnt
-
-cd /mnt/ArchTitus
 echo Finished!
