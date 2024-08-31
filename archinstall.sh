@@ -41,7 +41,8 @@ echo grub-mkconfig -o /boot/grub/grub.cfg >> script.sh
 cat script.sh | arch-chroot /mnt
 echo Creating user.
 echo useradd -m -G wheel -s /bin/bash arch > script.sh
-echo "echo 'arch:arch' | chpassword" >> script.sh
+echo "echo 'root:arch' | chpasswd" >> script.sh
+echo "echo 'arch:arch' | chpasswd" >> script.sh
 cat script.sh | arch-chroot /mnt
 echo Finished!
 reboot
