@@ -29,7 +29,7 @@ pacstrap -K /mnt base linux
 echo Generating FSTAB and Rooting
 genfstab -U /mnt >> /mnt/etc/fstab
 echo Installing git.
-echo pacman -S --noconfirm plasma-meta xorg plasma plasmaworkspace kde-applications > script.sh
+echo pacman -S --noconfirm plasma-meta xorg plasma plasmaworkspace kde-applications plasma-desktop > script.sh
 echo y >> script.sh
 cat script.sh | arch-chroot /mnt
 echo pacman -S --noconfirm grub efibootmgr networkmanager > script.sh
@@ -49,14 +49,14 @@ echo systemctl enable NetworkManager.service >> script.sh
 cat script.sh | arch-chroot /mnt
 echo Finished!
 echo Restarting in 5.
-wait 1
+wait 1s
 echo 4.
-wait 1
+wait 1s
 echo 3.
-wait 1
+wait 1s
 echo 2.
-wait 1
+wait 1s
 echo 1.
-wait 1
+wait 1s
 echo Rebooting!
 reboot
