@@ -1,4 +1,5 @@
-echo n > script.txt
+echo g > script.txt
+echo n >> script.txt
 echo p >> script.txt
 echo 1 >> script.txt
 echo -en '\n' >> script.txt
