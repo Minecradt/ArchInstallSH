@@ -4,14 +4,17 @@ echo p >> script.txt
 echo 1 >> script.txt
 echo -en '\n' >> script.txt
 echo +1G >> script.txt
+echo -en '\n' >> script.txt
 echo n >> script.txt
 echo p >> script.txt
 echo 2 >> script.txt
 echo -en '\n' >> script.txt
 echo +4G >> script.txt
+echo -en '\n' >> script.txt
 echo n >> script.txt
 echo p >> script.txt
 echo 3 >> script.txt
+echo -en '\n' >> script.txt
 echo -en '\n' >> script.txt
 echo -en '\n' >> script.txt
 echo w >> script.txt
