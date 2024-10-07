@@ -1,4 +1,4 @@
-echo g > script.txt
+echo o > script.txt
 echo n >> script.txt
 echo p >> script.txt
 echo 1 >> script.txt
