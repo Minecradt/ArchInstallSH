@@ -53,14 +53,14 @@ echo systemctl enable NetworkManager.service >> script.sh
 cat script.sh | arch-chroot /mnt
 echo Finished!
 echo Restarting in 5.
-wait 1s
+sleep 1s
 echo 4.
-wait 1s
+sleep 1s
 echo 3.
-wait 1s
+sleep 1s
 echo 2.
-wait 1s
+sleep 1s
 echo 1.
-wait 1s
+sleep 1s
 echo Rebooting!
 reboot
