@@ -29,6 +29,7 @@ mount /dev/sda3 /mnt
 mount --mkdir /dev/sda1 /mnt/boot   
 swapon /dev/sda2
 echo Installing Software.
+pacman -Sy archlinux-keyring
 pacstrap -K /mnt base linux
 echo Generating FSTAB and Rooting
 genfstab -U /mnt >> /mnt/etc/fstab
